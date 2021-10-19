@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "755872425419",
+    "firebase_url": "https://flutter-kidtracker-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutter-kidtracker",
+    "storage_bucket": "flutter-kidtracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755872425419:android:7cdc6cacdc27e1c9b2024e",
+        "android_client_info": {
+          "package_name": "com.example.find_that_kid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755872425419-53i1qdgcqbr5cvkcq6v58jsggqtr2rdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD78_lHQ1ojRyv21U031qSWsrr41rj3G2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755872425419-53i1qdgcqbr5cvkcq6v58jsggqtr2rdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
