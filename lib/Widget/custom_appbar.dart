@@ -4,16 +4,19 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
+  final bool leading;
 
   const CustomAppBar({
     Key? key,
     required this.title,
+    required this.leading,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.blue,
+      automaticallyImplyLeading: leading,
       title: Text(
         title,
         textAlign: TextAlign.center,

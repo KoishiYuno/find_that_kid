@@ -18,7 +18,10 @@ class LostNoticeListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: CustomAppBar(title: 'Lost Notices'),
+        appBar: CustomAppBar(
+          title: 'Lost Notices',
+          leading: false,
+        ),
         bottomNavigationBar: CustomNavBar(),
         body: BlocBuilder<LostNoticeListBloc, LostNoticeListState>(
           builder: (context, state) {

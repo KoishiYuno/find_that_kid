@@ -17,7 +17,10 @@ class KidProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: CustomAppBar(title: 'Edit Kid Profile'),
+      appBar: CustomAppBar(
+        title: 'Edit Kid Profile',
+        leading: false,
+      ),
       bottomNavigationBar: CustomNavBar(),
       body: BlocBuilder<KidProfileBloc, KidProfileState>(
         builder: (context, state) {

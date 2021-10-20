@@ -14,7 +14,10 @@ class MenuView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Menu'),
+      appBar: CustomAppBar(
+        title: 'Menu',
+        leading: false,
+      ),
       bottomNavigationBar: CustomNavBar(),
     );
   }

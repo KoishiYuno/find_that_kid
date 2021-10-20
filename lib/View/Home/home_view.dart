@@ -17,7 +17,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Location Tracker'),
+      appBar: CustomAppBar(
+        title: 'Location Tracker',
+        leading: false,
+      ),
       bottomNavigationBar: CustomNavBar(),
       body: Stack(
         children: [

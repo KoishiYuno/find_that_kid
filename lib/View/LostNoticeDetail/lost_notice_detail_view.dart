@@ -26,7 +26,10 @@ class LostNoticeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: CustomAppBar(title: 'Lost Notice: ${lostNotice.firstname}'),
+      appBar: CustomAppBar(
+        title: 'Lost Notice: ${lostNotice.firstname}',
+        leading: true,
+      ),
       bottomNavigationBar: CustomNavBar(),
       body: BlocBuilder<LostNoticeDetailBloc, LostNoticeDetailState>(
           builder: (context, state) {
