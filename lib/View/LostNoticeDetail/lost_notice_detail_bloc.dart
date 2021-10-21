@@ -27,6 +27,9 @@ class LostNoticeDetailBloc
     if (event is SubmitComment) {
       yield* _sumbitComment(event);
     }
+    if (event is SubmitDelete) {
+      yield* _sumbitDelete(event);
+    }
   }
 
   Stream<LostNoticeDetailState> _changeCommentField(
@@ -45,5 +48,10 @@ class LostNoticeDetailBloc
     // print('event is : ${event}');
     _lostNoticeSubscription?.cancel();
     _lostNoticeRepository.postNewComment(comment: someData, id: event.id);
+  }
+
+  Stream<LostNoticeDetailState> _sumbitDelete(SubmitDelete event) async* {
+    _lostNoticeSubscription?.cancel();
+    _lostNoticeRepository.deleteLostNotice(id: event.id);
   }
 }

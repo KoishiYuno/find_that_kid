@@ -27,3 +27,12 @@ class SubmitComment extends LostNoticeDetailEvent {
   @override
   List<Object> get props => [comment];
 }
+
+class SubmitDelete extends LostNoticeDetailEvent {
+  final String id;
+
+  SubmitDelete(this.id);
+
+  @override
+  List<Object> get props => [id];
+}

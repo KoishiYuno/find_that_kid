@@ -18,4 +18,8 @@ abstract class BaseLostNoticeRepository {
     required Location location,
     required KidProfile kidProfile,
   });
+
+  deleteLostNotice({
+    required String id,
+  });
 }

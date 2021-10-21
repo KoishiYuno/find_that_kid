@@ -140,39 +140,95 @@ class LostNoticeDetail extends StatelessWidget {
                 );
               },
             ),
-            Container(
-              margin: EdgeInsets.all(12),
-              height: 6 * 18.0,
-              child: TextField(
-                style: Theme.of(context).textTheme.bodyText1,
-                maxLines: 6,
-                decoration: InputDecoration(
-                  hintStyle: Theme.of(context).textTheme.bodyText1,
-                  hintText: "Provide Clues By Leave a Comment",
-                  fillColor: Colors.grey[300],
-                  filled: true,
-                ),
-                onChanged: (value) => context.read<LostNoticeDetailBloc>().add(
-                      ChangeCommentField(value),
+
+            Column(
+              children: [
+                if (lostNotice.id == 'test') ...[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100, right: 100),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        context
+                            .read<LostNoticeDetailBloc>()
+                            .add(SubmitDelete('test'));
+                        Navigator.pushNamed(context, '/lostNoticeList');
+                        // print(state.props.join(""));
+                      },
+                      child: Text('Delete Lost Notice'),
                     ),
-              ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ] else ...[
+                  Container(
+                    margin: EdgeInsets.all(12),
+                    height: 6 * 18.0,
+                    child: TextField(
+                      style: Theme.of(context).textTheme.bodyText1,
+                      maxLines: 6,
+                      decoration: InputDecoration(
+                        hintStyle: Theme.of(context).textTheme.bodyText1,
+                        hintText: "Provide Clues By Leave a Comment",
+                        fillColor: Colors.grey[300],
+                        filled: true,
+                      ),
+                      onChanged: (value) =>
+                          context.read<LostNoticeDetailBloc>().add(
+                                ChangeCommentField(value),
+                              ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100, right: 100),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        context.read<LostNoticeDetailBloc>().add(
+                            SubmitComment(state.props.join(""), lostNotice.id));
+                        Navigator.pushNamed(context, '/lostNoticeList');
+                        // print(state.props.join(""));
+                      },
+                      child: Text('Post Comment'),
+                    ),
+                  ),
+                ]
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100),
-              child: ElevatedButton(
-                onPressed: () {
-                  context
-                      .read<LostNoticeDetailBloc>()
-                      .add(SubmitComment(state.props.join(""), lostNotice.id));
-                  Navigator.pushNamed(context, '/lostNoticeList');
-                  // print(state.props.join(""));
-                },
-                child: Text('Post Comment'),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
+
+            // Container(
+            //   margin: EdgeInsets.all(12),
+            //   height: 6 * 18.0,
+            //   child: TextField(
+            //     style: Theme.of(context).textTheme.bodyText1,
+            //     maxLines: 6,
+            //     decoration: InputDecoration(
+            //       hintStyle: Theme.of(context).textTheme.bodyText1,
+            //       hintText: "Provide Clues By Leave a Comment",
+            //       fillColor: Colors.grey[300],
+            //       filled: true,
+            //     ),
+            //     onChanged: (value) => context.read<LostNoticeDetailBloc>().add(
+            //           ChangeCommentField(value),
+            //         ),
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 100, right: 100),
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       context
+            //           .read<LostNoticeDetailBloc>()
+            //           .add(SubmitComment(state.props.join(""), lostNotice.id));
+            //       Navigator.pushNamed(context, '/lostNoticeList');
+            //       // print(state.props.join(""));
+            //     },
+            //     child: Text('Post Comment'),
+            //   ),
+            // ),
+
+            // SizedBox(
+            //   height: 20,
+            // ),
           ],
         );
       }),

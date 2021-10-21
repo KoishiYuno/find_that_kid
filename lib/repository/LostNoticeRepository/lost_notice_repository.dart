@@ -56,7 +56,7 @@ class LostNoticeRepository extends BaseLostNoticeRepository {
         gender: kidProfile.gender,
         height: kidProfile.height,
         weight: kidProfile.weight,
-        id: 'myid',
+        id: 'test',
         description: description,
         parentName: 'Van LightHolme',
         email: 'vanlightholme@gmail.com',
@@ -81,5 +81,18 @@ class LostNoticeRepository extends BaseLostNoticeRepository {
               else
                 {print('document already exist')}
             });
+  }
+
+  @override
+  deleteLostNotice({
+    required String id,
+  }) {
+    // List<Map<String, dynamic>> someData = [
+    //   {
+    //     'username': 'sam',
+    //     'text': 'something',
+    //   }
+    // ];
+    FirebaseFirestore.instance.collection('LostNotices').doc(id).delete();
   }
 }
