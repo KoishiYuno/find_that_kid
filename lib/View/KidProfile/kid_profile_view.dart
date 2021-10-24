@@ -36,12 +36,17 @@ class KidProfileView extends StatelessWidget {
                     SizedBox(
                       height: 30,
                     ),
-                    CircleAvatar(
-                      radius: 50,
-                      child: Image.network(
-                        state.kidProfile.avatarPath,
-                      ),
+                    SizedBox(
+                      height: 100.0,
+                      child: Image.network(state
+                          .kidProfile.avatarPath), // Your image widget here
                     ),
+                    // CircleAvatar(
+                    //   radius: 50,
+                    //   child: Image.network(
+                    //     state.kidProfile.avatarPath,
+                    //   ),
+                    // ),
                     TextButton(
                       onPressed: () {},
                       child: Text('change Avatar'),
