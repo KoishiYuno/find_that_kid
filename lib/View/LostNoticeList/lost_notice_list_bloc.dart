@@ -32,6 +32,7 @@ class LostNoticeListBloc
 
   Stream<LostNoticeListState> _mapLoadLostNoticesToState() async* {
     _lostNoticeSubscription?.cancel();
+    var lostNotice = _lostNoticeRepository.getAllLostNotices();
     _lostNoticeSubscription = _lostNoticeRepository
         .getAllLostNotices()
         .listen((lostNotices) => add(UpdateLostNotices(lostNotices)));
